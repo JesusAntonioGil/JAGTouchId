@@ -48,7 +48,10 @@
 {
     [self.context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:@"Place your finguer on the sensor" reply:^(BOOL success, NSError *error)
     {
-        [self.delegate touchIdAuthetication:success error:error];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.delegate touchIdAuthetication:success error:error];
+        });
+
     }];
 }
 
