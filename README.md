@@ -3,7 +3,7 @@
 
 ## Overview
 
-JAGTouchId provides supportive methods to check biometric authetication.
+JAGTouchId provides supportive methods to check biometric authentication.
 
 ## Usage
 
