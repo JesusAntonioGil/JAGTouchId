@@ -1,3 +1,4 @@
+![alt tag](http://www.mobiles.co.uk/blog/wp-content/uploads/2013/09/iphone-touch-id-logo.png)
 # JAGTouchId
 
 ## Overview
