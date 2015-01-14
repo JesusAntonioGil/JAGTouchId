@@ -20,10 +20,10 @@
 
 #pragma mark - PUBLIC
 
-- (void)startTouchIdAuthetication
+- (void)startTouchIdAuthentication
 {
     self.context = [[LAContext alloc] init];
-    if ([self checkBiometricsAuthetication])
+    if ([self checkBiometricsAuthentication])
     {
         [self authenticateBiometric];
     }
@@ -31,13 +31,13 @@
 
 #pragma mark - PRIVATE
 
-- (BOOL)checkBiometricsAuthetication
+- (BOOL)checkBiometricsAuthentication
 {
     NSError *error = nil;
     
     if(![self.context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error])
     {
-        [self.delegate touchIdAuthetication:NO error:error];
+        [self.delegate touchIdAuthentication:NO error:error];
         return NO;
     }
     
@@ -46,10 +46,10 @@
 
 - (void)authenticateBiometric
 {
-    [self.context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:@"Place your finguer on the sensor" reply:^(BOOL success, NSError *error)
+    [self.context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:@"Place your finger on the sensor" reply:^(BOOL success, NSError *error)
     {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.delegate touchIdAuthetication:success error:error];
+            [self.delegate touchIdAuthentication:success error:error];
         });
 
     }];
