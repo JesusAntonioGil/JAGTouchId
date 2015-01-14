@@ -11,7 +11,7 @@
 
 @protocol JAGTouchIdDelegate
 
-- (void)touchIdAuthetication:(BOOL)success error:(NSError *)error;
+- (void)touchIdAuthentication:(BOOL)success error:(NSError *)error;
 
 @end
 
@@ -20,6 +20,6 @@
 
 @property (weak, nonatomic) id <JAGTouchIdDelegate> delegate;
 
-- (void)startTouchIdAuthetication;
+- (void)startTouchIdAuthentication;
 
 @end
